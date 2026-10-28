@@ -15,7 +15,9 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1] / "assets" / "icons"
 UI = ROOT / "ui"
-APP_SIZE = 128  # max courant lanceur PocketBook
+# Era / FW 6.x : max pratique ~106×128 (pas 128×128 carré)
+APP_W = 106
+APP_H = 128
 UI_SIZE = 96
 
 
@@ -31,13 +33,14 @@ def to_pb_bmp(img: Image.Image) -> Image.Image:
     return out
 
 
-def save_app(img: Image.Image, name: str, size: int = APP_SIZE) -> None:
-    img = img.resize((size, size), Image.Resampling.LANCZOS)
+def save_app(img: Image.Image, name: str, w: int = APP_W, h: int = APP_H) -> None:
+    img = img.resize((w, h), Image.Resampling.LANCZOS)
     normal = to_pb_bmp(img)
     focused = to_pb_bmp(Image.eval(img.convert("L"), lambda p: 255 - p))
     ROOT.mkdir(parents=True, exist_ok=True)
-    normal.save(ROOT / f"{name}.bmp")
-    focused.save(ROOT / f"{name}_f.bmp")
+    # BMP non compressé explicite
+    normal.save(ROOT / f"{name}.bmp", format="BMP")
+    focused.save(ROOT / f"{name}_f.bmp", format="BMP")
     img.convert("L").save(ROOT / f"{name}.png")
 
 
@@ -47,40 +50,26 @@ def save_ui(img: Image.Image, name: str) -> None:
     to_pb_bmp(img).save(UI / f"{name}.bmp")
 
 
-def make_app_icon(size: int = 256) -> Image.Image:
-    """Grand « K » (Kobo) — contraste max e-ink / lanceur PB."""
-    im = Image.new("L", (size, size), 255)
+def make_app_icon(w: int = 212, h: int = 256) -> Image.Image:
+    """Grand « K » (Kobo) — contraste max e-ink / lanceur PB (ratio ~106×128)."""
+    im = Image.new("L", (w, h), 255)
     d = ImageDraw.Draw(im)
-    m = size // 16
-    stroke = max(6, size // 18)
+    m = min(w, h) // 16
 
-    # Cadre plein noir, K blanc (ou l'inverse via focus)
-    d.rounded_rectangle(
-        [m, m, size - m, size - m],
-        radius=size // 7,
-        fill=0,
-        outline=0,
-    )
+    d.rounded_rectangle([m, m, w - m, h - m], radius=min(w, h) // 7, fill=0)
 
     try:
         font = ImageFont.truetype(
-            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", int(size * 0.62)
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", int(h * 0.55)
         )
     except OSError:
         font = ImageFont.load_default()
 
     bbox = d.textbbox((0, 0), "K", font=font)
     tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
-    tx = (size - tw) // 2 - bbox[0]
-    ty = (size - th) // 2 - bbox[1] - size // 40
+    tx = (w - tw) // 2 - bbox[0]
+    ty = (h - th) // 2 - bbox[1] - h // 40
     d.text((tx, ty), "K", fill=255, font=font)
-    # léger contour interne pour netteté à petite taille
-    d.rounded_rectangle(
-        [m, m, size - m, size - m],
-        radius=size // 7,
-        outline=0,
-        width=stroke // 2,
-    )
     return im
 
 
@@ -194,7 +183,7 @@ def icon_sort(size: int = UI_SIZE) -> Image.Image:
 
 
 def main() -> None:
-    save_app(make_app_icon(), "kobo_shop")
+    save_app(make_app_icon(APP_W * 2, APP_H * 2), "kobo_shop")
     for name, fn in (
         ("menu", icon_menu),
         ("search", icon_search),

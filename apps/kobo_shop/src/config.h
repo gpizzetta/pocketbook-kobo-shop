@@ -54,9 +54,9 @@ typedef struct {
 
 const char *app_data_dir(void);
 const char *app_books_dir(void);
-/* Dépôt USB des .acsm (site kobo.com) : /mnt/ext1/kobo_shop/acsm/ */
+/* Dépôt USB des .acsm : /mnt/ext1/kobo_shop_data/acsm/ */
 const char *app_acsm_drop_dir(void);
-/* EPUB KDRM bruts (non lisibles PB) : /mnt/ext1/kobo_shop/kdrm/ */
+/* EPUB KDRM bruts : /mnt/ext1/kobo_shop_data/kdrm/ */
 const char *app_kdrm_dir(void);
 const char *app_adept_dir(void);
 const char *app_covers_dir(void);

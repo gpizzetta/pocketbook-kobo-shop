@@ -34,12 +34,14 @@ Sur la liseuse :
 
 ```
 applications/
-  kobo_shop.app      ← entrée Applications
-  icons/
-    kobo_shop.bmp    ← icône lanceur (8-bit BMP)
-    kobo_shop_f.bmp  ← variante focus
-  kobo_shop/         ← moteurs ADEPT + libs + icons/ UI
-  kobo_shop_data/    ← config / cache
+  kobo_shop.app           ← entrée Applications
+  kobo_shop/              ← install (binaires ADEPT, libs, icons/)
+    icons/kobo_shop.bmp   ← icône lanceur
+kobo_shop_data/           ← créé par l'app (racine stockage)
+  config.json, library.json, covers/, adept/
+  acsm/                   ← dépôt USB des .acsm
+  kdrm/                   ← archives EPUB KDRM
+Books/Kobo/               ← EPUB Adobe / libres
 ```
 
 Éjecter, lancer **kobo_shop**.
@@ -47,12 +49,10 @@ applications/
 ### Icônes
 
 ```bash
-# régénérer (Pillow) :
 .venv/bin/python apps/kobo_shop/scripts/generate_icons.py
-# → assets/icons/kobo_shop{,_f}.bmp + assets/icons/ui/{menu,search,…}.bmp
 ```
 
-`build.sh` / `deploy.sh` copient le BMP lanceur vers `applications/icons/` (même nom que le `.app`) et le set UI vers `applications/kobo_shop/icons/`.
+`deploy.sh` place tout sous `applications/kobo_shop/icons/` et met à jour `view.json`.
 
 ## Première utilisation
 
@@ -61,20 +61,20 @@ applications/
 3. **2 Compte ByteBooks** → e-mail / mot de passe ByteBooks (activation ADEPT si outils présents)
 4. **3 Bibliothèque** → sync → choisir un titre → **Télécharger** → **Ouvrir**
 
-Données locales : `/mnt/ext1/applications/kobo_shop_data/`  
-Livres (EPUB) : `/mnt/ext1/Books/Kobo/`  
-Dépôt ACSM (USB) : `/mnt/ext1/kobo_shop/acsm/` (créé au 1er lancement)  
-Archive KDRM : `/mnt/ext1/kobo_shop/kdrm/` (EPUB chiffrés appareil, non lisibles PB)
+Données : `/mnt/ext1/kobo_shop_data/`  
+Livres : `/mnt/ext1/Books/Kobo/`  
+ACSM : `/mnt/ext1/kobo_shop_data/acsm/`  
+KDRM : `/mnt/ext1/kobo_shop_data/kdrm/`
 
 ## Titres sans ACSM via l’API (souvent label « sans ACSM »)
 
 L’API appareil ne propose parfois que du KDRM, alors que **kobo.com** donne quand même un `.acsm` (Adobe). Flux prévu — **sans retrait de DRM** :
 
 1. PC : [kobo.com](https://www.kobo.com) → Mes livres → **Télécharger** (Adobe) → `.acsm`
-2. USB → copier dans **`kobo_shop/acsm/`** (racine de la liseuse)
-3. Liseuse : **kobo_shop** → ☰ → **Importer ACSM (kobo_shop/acsm)**  
+2. USB → copier dans **`kobo_shop_data/acsm/`**
+3. Liseuse : **kobo_shop** → ☰ → **Importer ACSM**  
    (ByteBooks activé une fois)
-4. L’app fulfil → déplace l’EPUB Adobe vers `Books/Kobo/`, retire le `.acsm` du dépôt, rattache le titre → **Ouvrir**
+4. Fulfil → EPUB dans `Books/Kobo/`, retire le `.acsm` → **Ouvrir**
 
 Plusieurs `.acsm` d’un coup, puis un seul import.
 

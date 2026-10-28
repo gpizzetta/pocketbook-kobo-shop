@@ -82,7 +82,7 @@ static int cover_w(void) { return 96; }
 static int cover_h(void) { return 144; }
 static int row_h(void) { return 160; }
 /* Liste juste sous recherche/tri (voir draw_library) */
-static int list_top_y(void) { return 108; }
+static int list_top_y(void) { return 168; }
 static int footer_y(void) {
   int ph = PanelHeight();
   if (ph < 0) {
@@ -556,7 +556,7 @@ static void open_lib_menu(void) {
   if (g_search[0]) {
     menu[n++] = (imenu){ITEM_ACTIVE, 7, "Effacer la recherche", NULL};
   }
-  menu[n++] = (imenu){ITEM_ACTIVE, 8, "Importer ACSM (kobo_shop/acsm)", NULL};
+  menu[n++] = (imenu){ITEM_ACTIVE, 8, "Importer ACSM (kobo_shop_data/acsm)", NULL};
   menu[n++] = (imenu){ITEM_SEPARATOR, 0, NULL, NULL};
   menu[n++] = (imenu){ITEM_ACTIVE, 4, "Tri : nom", NULL};
   menu[n++] = (imenu){ITEM_ACTIVE, 5, "Tri : date d'ajout", NULL};
@@ -753,24 +753,24 @@ static void draw_bb_form(void) {
 
 static void draw_library(void) {
   int ms = menu_btn_size();
-  /* Titre + compteur sur une seule ligne (évite chevauchement avec le trait) */
-  int header_h = 52;
+  /* Titre + compteur ; marge sous le titre avant les boutons */
+  int header_h = 64;
   FillArea(0, 0, ScreenWidth(), header_h, WHITE);
-  make_btn(&g_menu_btn, ScreenWidth() - ms - 8, 4, ms, ms, "", 1, 0);
+  make_btn(&g_menu_btn, ScreenWidth() - ms - 8, 6, ms, ms, "", 1, 0);
   draw_hamburger(g_menu_btn.x, g_menu_btn.y, ms);
   SetFont(font_title, BLACK);
-  DrawString(14, 8, "Bibliothèque");
+  DrawString(14, 12, "Bibliothèque");
   SetFont(font_small, BLACK);
   char info[96];
   snprintf(info, sizeof(info), "%d / %d", g_view_count, g_books.count);
   int info_w = StringWidth(info);
-  DrawString(ScreenWidth() - ms - 16 - info_w, 18, info);
+  DrawString(ScreenWidth() - ms - 16 - info_w, 22, info);
   DrawLine(0, header_h - 1, ScreenWidth(), header_h - 1, BLACK);
 
-  /* ~10 % plus haut qu'avant (by≈74 → ≈52) */
-  int by = header_h + 2;
+  /* Espace sous « Bibliothèque » + boutons 2× plus hauts */
+  int by = header_h + 14;
   int gap = 10;
-  int bh = 44;
+  int bh = 88;
   int sw = (ScreenWidth() - 2 * btn_pad_x() - gap) / 2;
   make_btn(&g_search_btn, btn_pad_x(), by, sw, bh,
            g_search[0] ? g_search : "Rechercher…", 1, 0);
@@ -868,7 +868,7 @@ static void draw_book(void) {
   } else if (b->drm == BOOK_DRM_KDRM) {
     DrawTextRect(24, 260, ScreenWidth() - 48, 80,
                  "Pas d'ACSM API — .acsm depuis kobo.com "
-                 "dans kobo_shop/acsm/ puis menu Importer.",
+                 "dans kobo_shop_data/acsm/ puis menu Importer.",
                  ALIGN_LEFT | VALIGN_TOP);
   }
 
@@ -941,7 +941,7 @@ static void do_download(void) {
     return;
   }
   if (dl == 1) {
-    /* KDRM archivé dans kobo_shop/kdrm/ — pas ouvrable ici */
+    /* KDRM archivé dans kobo_shop_data/kdrm/ — pas ouvrable ici */
     library_cache_save(&g_books);
     HideHourglass();
     alert_ok(ICON_INFORMATION, "KDRM archivé", err);

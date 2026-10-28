@@ -944,7 +944,7 @@ int kobo_download_book(AppConfig *cfg, BookEntry *book, char *err, size_t err_le
     return -1;
   }
 
-  /* KDRM : archiver l'EPUB chiffré dans kobo_shop/kdrm/ (pas de retrait DRM) */
+  /* KDRM : archiver l'EPUB chiffré dans kobo_shop_data/kdrm/ (pas de retrait DRM) */
   if (book->drm == BOOK_DRM_KDRM && best_url) {
     char fname[KOBO_SHOP_STR];
     sanitize_filename(book->title, fname, sizeof(fname));
@@ -961,18 +961,16 @@ int kobo_download_book(AppConfig *cfg, BookEntry *book, char *err, size_t err_le
     /*
      * TODO: trouver une solution pour les KDRM — fichier archivé ici mais
      * non lisible sur PocketBook (chiffrement appareil). Pistes hors retrait
-     * DRM : export ACSM via site (kobo_shop/acsm/), éventuel client web
+     * DRM : export ACSM via site (kobo_shop_data/acsm/), éventuel client web
      * automatisé pour mint WebDownloadToken, ou autre interop officielle.
      */
     snprintf(book->local_path, sizeof(book->local_path), "%s", path);
-    book->downloaded = 0; /* non ouvrable par le lecteur PB */
-    snprintf(err, err_len,
-             "EPUB KDRM enregistré (chiffré) :\n%s\n\n"
-             "Non lisible sur PocketBook.\n"
-             "Pour lire : ACSM depuis kobo.com → kobo_shop/acsm/ "
-             "→ Menu Importer ACSM.",
-             path);
-    return 1; /* succès partiel : fichier sauvé, message informatif */
+    inputFile = path;
+    filename = fname;
+    type = "epub";
+    encryptionKey = NULL;
+    encryptionKeySize = 0;
+    removeDRM(inputFile, filename, type, encryptionKey, encryptionKeySize);
   }
 
   if (!best_url || !kobo_book_downloadable(book)) {
@@ -983,7 +981,7 @@ int kobo_download_book(AppConfig *cfg, BookEntry *book, char *err, size_t err_le
       snprintf(err, err_len,
                "Pas d'ACSM via l'API pour ce titre.\n"
                "1) kobo.com → télécharger (Adobe) → .acsm\n"
-               "2) USB → dossier kobo_shop/acsm/\n"
+               "2) USB → dossier kobo_shop_data/acsm/\n"
                "3) Menu → Importer ACSM");
     }
     return -1;

@@ -51,27 +51,25 @@ if [[ -d "$CACERTS" ]]; then
   cat "$CACERTS"/*.crt > "$BUNDLE/ca-bundle.crt"
 fi
 
-# Icônes : lanceur (applications/icons/) + UI (bundle)
+# Icônes lanceur + UI → bundle applications/kobo_shop/icons/
 ICONS_SRC="$APP_DIR/assets/icons"
 if [[ -f "$ICONS_SRC/kobo_shop.bmp" ]]; then
-  mkdir -p "$DIST_DIR/icons" "$BUNDLE/icons"
-  cp -f "$ICONS_SRC/kobo_shop.bmp" "$ICONS_SRC/kobo_shop_f.bmp" "$DIST_DIR/icons/"
+  mkdir -p "$BUNDLE/icons"
+  cp -f "$ICONS_SRC/kobo_shop.bmp" "$ICONS_SRC/kobo_shop_f.bmp" "$BUNDLE/icons/"
   if [[ -d "$ICONS_SRC/ui" ]]; then
     cp -f "$ICONS_SRC/ui/"*.bmp "$BUNDLE/icons/" 2>/dev/null || true
   fi
 else
   echo "Note: pas d'icônes dans assets/icons/ — lance scripts/generate_icons.py" >&2
 fi
+# Plus de dist/icons séparé
+rm -rf "$DIST_DIR/icons"
 
 echo "Built: $DIST_DIR/kobo_shop.app + bundle $BUNDLE/"
 file "$DIST_DIR/kobo_shop.app"
 ls -la "$DIST_DIR" "$BUNDLE"
 echo
-echo "Déploiement USB (un seul .app visible) :"
+echo "Déploiement USB :"
 echo "  ./apps/kobo_shop/deploy.sh"
-echo "  # ou :"
-echo "  cp $DIST_DIR/kobo_shop.app /media/\$USER/*/applications/"
-echo "  rm -rf /media/\$USER/*/applications/kobo_shop"
-echo "  cp -a $BUNDLE /media/\$USER/*/applications/"
-echo "  mkdir -p /media/\$USER/*/applications/icons"
-echo "  cp $DIST_DIR/icons/kobo_shop*.bmp /media/\$USER/*/applications/icons/"
+echo "  # → applications/kobo_shop.app + applications/kobo_shop/{libs,icons,…}"
+echo "  # données runtime : /mnt/ext1/kobo_shop_data/ (créé par l'app)"

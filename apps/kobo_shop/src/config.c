@@ -56,14 +56,19 @@ static void init_paths(void) {
   if (g_paths_ok) {
     return;
   }
-  /* /mnt/ext1/system/config peut être fragile ; préférer à côté de l'app. */
+  /*
+   * Données app à la racine du stockage (créé par l'app) :
+   *   /mnt/ext1/kobo_shop_data/{config,covers,adept,acsm,kdrm,…}
+   * Libs / binaires installés : applications/kobo_shop/ (deploy).
+   */
   const char *candidates[] = {
-      "/mnt/ext1/applications/kobo_shop_data",
+      "/mnt/ext1/kobo_shop_data",
+      "/mnt/ext1/applications/kobo_shop_data", /* ancien emplacement */
       "/mnt/ext1/system/config/kobo_shop",
       "./kobo_shop_data",
       NULL,
   };
-  const char *base = candidates[2];
+  const char *base = candidates[3];
   for (int i = 0; candidates[i]; i++) {
     if (dir_writable(candidates[i])) {
       base = candidates[i];
@@ -77,18 +82,14 @@ static void init_paths(void) {
     snprintf(g_books, sizeof(g_books), "%s/books", g_data);
     mkdir_p(g_books);
   }
-  /* Racine stockage : facile à trouver en USB */
-  if (dir_writable("/mnt/ext1/kobo_shop/acsm")) {
+  /* Dépôts sous kobo_shop_data ; repli ancien /mnt/ext1/kobo_shop/{acsm,kdrm} */
+  snprintf(g_acsm_drop, sizeof(g_acsm_drop), "%s/acsm", g_data);
+  if (!dir_writable(g_acsm_drop) && dir_writable("/mnt/ext1/kobo_shop/acsm")) {
     snprintf(g_acsm_drop, sizeof(g_acsm_drop), "%s", "/mnt/ext1/kobo_shop/acsm");
-  } else {
-    snprintf(g_acsm_drop, sizeof(g_acsm_drop), "%s/acsm", g_data);
-    mkdir_p(g_acsm_drop);
   }
-  if (dir_writable("/mnt/ext1/kobo_shop/kdrm")) {
+  snprintf(g_kdrm, sizeof(g_kdrm), "%s/kdrm", g_data);
+  if (!dir_writable(g_kdrm) && dir_writable("/mnt/ext1/kobo_shop/kdrm")) {
     snprintf(g_kdrm, sizeof(g_kdrm), "%s", "/mnt/ext1/kobo_shop/kdrm");
-  } else {
-    snprintf(g_kdrm, sizeof(g_kdrm), "%s/kdrm", g_data);
-    mkdir_p(g_kdrm);
   }
   snprintf(g_adept, sizeof(g_adept), "%s/adept", g_data);
   snprintf(g_covers, sizeof(g_covers), "%s/covers", g_data);

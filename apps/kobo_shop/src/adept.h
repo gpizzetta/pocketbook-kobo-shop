@@ -21,7 +21,7 @@ int adept_fulfill_acsm(const char *acsm_path, const char *out_epub, char *err,
 int adept_fulfill_book(BookEntry *book, char *err, size_t err_len);
 
 /*
- * Parcourt app_acsm_drop_dir() (kobo_shop/acsm/) :
+ * Parcourt app_acsm_drop_dir() (kobo_shop_data/acsm/) :
  *  - chaque .acsm → fulfil ADEPT → EPUB dans app_books_dir() (Books/Kobo)
  *  - supprime le .acsm du dépôt après succès
  *  - rattache à un BookEntry si le titre correspond
