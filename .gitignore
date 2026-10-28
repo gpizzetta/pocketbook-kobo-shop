@@ -1,0 +1,36 @@
+# PocketBook SDK (large binary toolchain)
+third_party/SDK-B288-6.10/
+third_party/*.7z
+third_party/libgourou-0.8.10/
+
+# Build outputs
+**/build/
+apps/**/*.app
+
+# Kobo probe secrets / account data
+docs/spikes/kobo-probe-state.json
+docs/spikes/kobo-drm-matrix.json
+docs/spikes/kobo-sync-sample.json
+.venv/
+
+# ADEPT activation + fulfilled books (keep DRM files local)
+tools/acsm_fulfill/adept/
+tools/acsm_fulfill/out/
+tools/acsm_fulfill/*.zip
+tools/acsm_fulfill/asn1crypto/
+tools/acsm_fulfill/oscrypto/
+ascm_exemple/*.acsm
+ascm_exemple/*.ascm
+
+# Editor / OS
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# App runtime / clones / cross-build
+apps/kobo_shop/dist/
+third_party/libgourou-src/
+third_party/adept_arm/
+kobo_shop_data/
+tools/acsm_fulfill/dist_arm/

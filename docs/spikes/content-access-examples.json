@@ -1,0 +1,1418 @@
+{
+  "sans_acsm_api": {
+    "title": "Voyage au bout de la nuit",
+    "product_id": "6a2f8a1c-65e5-4e52-9620-964fcc190484",
+    "profiles": {
+      "Android": {
+        "ContentUrls": [
+          {
+            "DisplayProfile": "Generic",
+            "DRMType": "KDRM",
+            "DownloadUrl": "https://getbook.kobo.com/koboid-prod-public/gallimard-epub-289b486d-1bf8-4085-a087-7f8ba56d6880.epub",
+            "UrlFormat": "EPUB3",
+            "ByteSize": 1824778
+          }
+        ],
+        "ContentKeys": [
+          {
+            "Name": "OEBPS/fonts/AGARAMOI.ttf",
+            "Value": "bOyPkX1lYKoSYxVf7Pgm6w=="
+          },
+          {
+            "Name": "OEBPS/images/cover.jpg",
+            "Value": "ER83ceITk19ydxV6TBFfDQ=="
+          },
+          {
+            "Name": "OEBPS/dedi001.xhtml",
+            "Value": "CgxF6kQBz6icDnpGKbx+3g=="
+          },
+          {
+            "Name": "OEBPS/chap023.xhtml",
+            "Value": "4201yrfqG1fiRF9uD9C88w=="
+          },
+          {
+            "Name": "OEBPS/fonts/AGARAMOR.ttf",
+            "Value": "jB7PD9sClTdwuxqsmyRdtQ=="
+          },
+          {
+            "Name": "OEBPS/chap033.xhtml",
+            "Value": "ANXnZvZ12tGv80w+LxfhKg=="
+          },
+          {
+            "Name": "OEBPS/chap013.xhtml",
+            "Value": "QmDENHTnrtk1aubYSCVb0Q=="
+          },
+          {
+            "Name": "OEBPS/chap003.xhtml",
+            "Value": "0fpMY6DYBgBadTtLc3lKlg=="
+          },
+          {
+            "Name": "OEBPS/chap043.xhtml",
+            "Value": "PYpM6yYVhF5WcltfeXw5aw=="
+          },
+          {
+            "Name": "OEBPS/chap039.xhtml",
+            "Value": "c8YwdWutEQ3QxtFsd3xNTQ=="
+          },
+          {
+            "Name": "OEBPS/chap026.xhtml",
+            "Value": "iy9CoiBt0WhQ4ZbSxzOYyA=="
+          },
+          {
+            "Name": "OEBPS/chap036.xhtml",
+            "Value": "kcixnSb/BJMkxqQHwqTm7A=="
+          },
+          {
+            "Name": "OEBPS/chap046.xhtml",
+            "Value": "GLRiGH0aNxvQ5mr1WhEYNQ=="
+          },
+          {
+            "Name": "OEBPS/chap016.xhtml",
+            "Value": "Ut6aG6cVf3dgZKpORkHehw=="
+          },
+          {
+            "Name": "OEBPS/chap006.xhtml",
+            "Value": "K0LVfdKZT1SV9t0WVKL3mg=="
+          },
+          {
+            "Name": "OEBPS/chap037.xhtml",
+            "Value": "0yivCDXZm6S6vjiG+ZvInQ=="
+          },
+          {
+            "Name": "OEBPS/chap002.xhtml",
+            "Value": "RXt7SdzRdNlxC6MD7AXrKg=="
+          },
+          {
+            "Name": "OEBPS/chap022.xhtml",
+            "Value": "Ilr4TfyHUIvsRVyH+DNX9w=="
+          },
+          {
+            "Name": "OEBPS/chap017.xhtml",
+            "Value": "xPKQQHT74qxZ5x/a7b7Cmw=="
+          },
+          {
+            "Name": "OEBPS/chap030.xhtml",
+            "Value": "zOmmXw8bm8CVyu+xUpXF1A=="
+          },
+          {
+            "Name": "OEBPS/chap009.xhtml",
+            "Value": "G/YNFO3AazjnTO1+Blz5Lw=="
+          },
+          {
+            "Name": "OEBPS/chap029.xhtml",
+            "Value": "IVvzf8ML25yHd23PR6ecUA=="
+          },
+          {
+            "Name": "OEBPS/tit001.xhtml",
+            "Value": "rGhi7gscFqMNCVO5hB980Q=="
+          },
+          {
+            "Name": "OEBPS/print.xhtml",
+            "Value": "HcBbzjAyP3VZNn4oPVTAxw=="
+          },
+          {
+            "Name": "OEBPS/chap014.xhtml",
+            "Value": "WI35mZX03DIektL1PeWfTg=="
+          },
+          {
+            "Name": "OEBPS/same001.xhtml",
+            "Value": "bpivwifk7QWiYODc8h+SwA=="
+          },
+          {
+            "Name": "OEBPS/chap025.xhtml",
+            "Value": "nm3WdfzuMvrm+ptJo9W3NQ=="
+          },
+          {
+            "Name": "OEBPS/chap005.xhtml",
+            "Value": "028F2Wf+07VCxXkfeViPXQ=="
+          },
+          {
+            "Name": "OEBPS/epi001.xhtml",
+            "Value": "KeaPWBiiWXQQSlYnKuUaoQ=="
+          },
+          {
+            "Name": "OEBPS/chap010.xhtml",
+            "Value": "T35Lk+CBzMVC6DDbTwMwqA=="
+          },
+          {
+            "Name": "OEBPS/chap042.xhtml",
+            "Value": "Jb/Fcc/S9CTlM711oIhkkQ=="
+          },
+          {
+            "Name": "OEBPS/chap045.xhtml",
+            "Value": "YBr64mLeIzVgk9i069VUuA=="
+          },
+          {
+            "Name": "OEBPS/chap018.xhtml",
+            "Value": "8hyDtmVKNejuYBUj0gFP9A=="
+          },
+          {
+            "Name": "OEBPS/chap031.xhtml",
+            "Value": "H5F9FySWBKDsRHoz/q3lVg=="
+          },
+          {
+            "Name": "OEBPS/chap038.xhtml",
+            "Value": "mtrAQIbuAoVd5KK2qplfaA=="
+          },
+          {
+            "Name": "OEBPS/chap008.xhtml",
+            "Value": "fuMpMzcagMEjx+Abee5G3g=="
+          },
+          {
+            "Name": "OEBPS/chap028.xhtml",
+            "Value": "7w6qS3Lr7wHfQ7M+D45PgQ=="
+          },
+          {
+            "Name": "OEBPS/chap044.xhtml",
+            "Value": "N3kX/8VQRMuSo2SXeWQvtw=="
+          },
+          {
+            "Name": "OEBPS/chap024.xhtml",
+            "Value": "CjFad71IPqfawQxBtBinvw=="
+          },
+          {
+            "Name": "OEBPS/chap034.xhtml",
+            "Value": "sIv9UrfqK+qraC8n3+55vQ=="
+          },
+          {
+            "Name": "OEBPS/chap001.xhtml",
+            "Value": "ikth3qnQ7sEgV8tPAPKR7Q=="
+          },
+          {
+            "Name": "OEBPS/copy.xhtml",
+            "Value": "oqPXvYDGpQ/H4QSlnGKwCQ=="
+          },
+          {
+            "Name": "OEBPS/chap011.xhtml",
+            "Value": "QY2lW5Ar4k+aZPIOU2MtRw=="
+          },
+          {
+            "Name": "OEBPS/chap021.xhtml",
+            "Value": "eYimB/TIYFIDgo13YqMLdw=="
+          },
+          {
+            "Name": "OEBPS/chap041.xhtml",
+            "Value": "lyWruUgFVk60+lToY8i4Sw=="
+          },
+          {
+            "Name": "OEBPS/chap012.xhtml",
+            "Value": "yu9MOCi1yhqE3Ll4BjbQjg=="
+          },
+          {
+            "Name": "OEBPS/chap032.xhtml",
+            "Value": "C4potJO85rtX7nSf40mFVg=="
+          },
+          {
+            "Name": "OEBPS/chap027.xhtml",
+            "Value": "h+7RAlskBjh3s8HULa9Tsg=="
+          },
+          {
+            "Name": "OEBPS/chap019.xhtml",
+            "Value": "3Kxq1FgKSbF4Po/ndL3Ehw=="
+          },
+          {
+            "Name": "OEBPS/chap040.xhtml",
+            "Value": "94ipGDqo5PMB3rjsLwTvgg=="
+          },
+          {
+            "Name": "OEBPS/chap007.xhtml",
+            "Value": "mj2YZ/S19pEcfwnfdmJUZg=="
+          },
+          {
+            "Name": "OEBPS/chap020.xhtml",
+            "Value": "MLG/WmCwdrBw3I6HWrSE5w=="
+          },
+          {
+            "Name": "OEBPS/chap004.xhtml",
+            "Value": "MGjm7AyvdSnm3XKSYQIfbw=="
+          },
+          {
+            "Name": "OEBPS/pageMap.xml",
+            "Value": "/hexsiLt8baImHspZWw2iA=="
+          },
+          {
+            "Name": "OEBPS/images/logonrf.jpg",
+            "Value": "bI34uUBpf6kaCePbt5ElTA=="
+          },
+          {
+            "Name": "OEBPS/chap015.xhtml",
+            "Value": "HM2Ueh7C39LApCZmx2rI9w=="
+          },
+          {
+            "Name": "OEBPS/chap035.xhtml",
+            "Value": "A/eiIwIEx1xt+Z76zyvfEA=="
+          },
+          {
+            "Name": "OEBPS/cover.xhtml",
+            "Value": "w/EalQOLHDRCCPDMrX2lMA=="
+          }
+        ]
+      },
+      "Desktop": {
+        "ContentUrls": [
+          {
+            "DisplayProfile": "Generic",
+            "DRMType": "KDRM",
+            "DownloadUrl": "https://getbook.kobo.com/koboid-prod-public/gallimard-epub-289b486d-1bf8-4085-a087-7f8ba56d6880.epub",
+            "UrlFormat": "EPUB3",
+            "ByteSize": 1824778
+          }
+        ],
+        "ContentKeys": [
+          {
+            "Name": "OEBPS/fonts/AGARAMOI.ttf",
+            "Value": "bOyPkX1lYKoSYxVf7Pgm6w=="
+          },
+          {
+            "Name": "OEBPS/images/cover.jpg",
+            "Value": "ER83ceITk19ydxV6TBFfDQ=="
+          },
+          {
+            "Name": "OEBPS/dedi001.xhtml",
+            "Value": "CgxF6kQBz6icDnpGKbx+3g=="
+          },
+          {
+            "Name": "OEBPS/chap023.xhtml",
+            "Value": "4201yrfqG1fiRF9uD9C88w=="
+          },
+          {
+            "Name": "OEBPS/fonts/AGARAMOR.ttf",
+            "Value": "jB7PD9sClTdwuxqsmyRdtQ=="
+          },
+          {
+            "Name": "OEBPS/chap033.xhtml",
+            "Value": "ANXnZvZ12tGv80w+LxfhKg=="
+          },
+          {
+            "Name": "OEBPS/chap013.xhtml",
+            "Value": "QmDENHTnrtk1aubYSCVb0Q=="
+          },
+          {
+            "Name": "OEBPS/chap003.xhtml",
+            "Value": "0fpMY6DYBgBadTtLc3lKlg=="
+          },
+          {
+            "Name": "OEBPS/chap043.xhtml",
+            "Value": "PYpM6yYVhF5WcltfeXw5aw=="
+          },
+          {
+            "Name": "OEBPS/chap039.xhtml",
+            "Value": "c8YwdWutEQ3QxtFsd3xNTQ=="
+          },
+          {
+            "Name": "OEBPS/chap026.xhtml",
+            "Value": "iy9CoiBt0WhQ4ZbSxzOYyA=="
+          },
+          {
+            "Name": "OEBPS/chap036.xhtml",
+            "Value": "kcixnSb/BJMkxqQHwqTm7A=="
+          },
+          {
+            "Name": "OEBPS/chap046.xhtml",
+            "Value": "GLRiGH0aNxvQ5mr1WhEYNQ=="
+          },
+          {
+            "Name": "OEBPS/chap016.xhtml",
+            "Value": "Ut6aG6cVf3dgZKpORkHehw=="
+          },
+          {
+            "Name": "OEBPS/chap006.xhtml",
+            "Value": "K0LVfdKZT1SV9t0WVKL3mg=="
+          },
+          {
+            "Name": "OEBPS/chap037.xhtml",
+            "Value": "0yivCDXZm6S6vjiG+ZvInQ=="
+          },
+          {
+            "Name": "OEBPS/chap002.xhtml",
+            "Value": "RXt7SdzRdNlxC6MD7AXrKg=="
+          },
+          {
+            "Name": "OEBPS/chap022.xhtml",
+            "Value": "Ilr4TfyHUIvsRVyH+DNX9w=="
+          },
+          {
+            "Name": "OEBPS/chap017.xhtml",
+            "Value": "xPKQQHT74qxZ5x/a7b7Cmw=="
+          },
+          {
+            "Name": "OEBPS/chap030.xhtml",
+            "Value": "zOmmXw8bm8CVyu+xUpXF1A=="
+          },
+          {
+            "Name": "OEBPS/chap009.xhtml",
+            "Value": "G/YNFO3AazjnTO1+Blz5Lw=="
+          },
+          {
+            "Name": "OEBPS/chap029.xhtml",
+            "Value": "IVvzf8ML25yHd23PR6ecUA=="
+          },
+          {
+            "Name": "OEBPS/tit001.xhtml",
+            "Value": "rGhi7gscFqMNCVO5hB980Q=="
+          },
+          {
+            "Name": "OEBPS/print.xhtml",
+            "Value": "HcBbzjAyP3VZNn4oPVTAxw=="
+          },
+          {
+            "Name": "OEBPS/chap014.xhtml",
+            "Value": "WI35mZX03DIektL1PeWfTg=="
+          },
+          {
+            "Name": "OEBPS/same001.xhtml",
+            "Value": "bpivwifk7QWiYODc8h+SwA=="
+          },
+          {
+            "Name": "OEBPS/chap025.xhtml",
+            "Value": "nm3WdfzuMvrm+ptJo9W3NQ=="
+          },
+          {
+            "Name": "OEBPS/chap005.xhtml",
+            "Value": "028F2Wf+07VCxXkfeViPXQ=="
+          },
+          {
+            "Name": "OEBPS/epi001.xhtml",
+            "Value": "KeaPWBiiWXQQSlYnKuUaoQ=="
+          },
+          {
+            "Name": "OEBPS/chap010.xhtml",
+            "Value": "T35Lk+CBzMVC6DDbTwMwqA=="
+          },
+          {
+            "Name": "OEBPS/chap042.xhtml",
+            "Value": "Jb/Fcc/S9CTlM711oIhkkQ=="
+          },
+          {
+            "Name": "OEBPS/chap045.xhtml",
+            "Value": "YBr64mLeIzVgk9i069VUuA=="
+          },
+          {
+            "Name": "OEBPS/chap018.xhtml",
+            "Value": "8hyDtmVKNejuYBUj0gFP9A=="
+          },
+          {
+            "Name": "OEBPS/chap031.xhtml",
+            "Value": "H5F9FySWBKDsRHoz/q3lVg=="
+          },
+          {
+            "Name": "OEBPS/chap038.xhtml",
+            "Value": "mtrAQIbuAoVd5KK2qplfaA=="
+          },
+          {
+            "Name": "OEBPS/chap008.xhtml",
+            "Value": "fuMpMzcagMEjx+Abee5G3g=="
+          },
+          {
+            "Name": "OEBPS/chap028.xhtml",
+            "Value": "7w6qS3Lr7wHfQ7M+D45PgQ=="
+          },
+          {
+            "Name": "OEBPS/chap044.xhtml",
+            "Value": "N3kX/8VQRMuSo2SXeWQvtw=="
+          },
+          {
+            "Name": "OEBPS/chap024.xhtml",
+            "Value": "CjFad71IPqfawQxBtBinvw=="
+          },
+          {
+            "Name": "OEBPS/chap034.xhtml",
+            "Value": "sIv9UrfqK+qraC8n3+55vQ=="
+          },
+          {
+            "Name": "OEBPS/chap001.xhtml",
+            "Value": "ikth3qnQ7sEgV8tPAPKR7Q=="
+          },
+          {
+            "Name": "OEBPS/copy.xhtml",
+            "Value": "oqPXvYDGpQ/H4QSlnGKwCQ=="
+          },
+          {
+            "Name": "OEBPS/chap011.xhtml",
+            "Value": "QY2lW5Ar4k+aZPIOU2MtRw=="
+          },
+          {
+            "Name": "OEBPS/chap021.xhtml",
+            "Value": "eYimB/TIYFIDgo13YqMLdw=="
+          },
+          {
+            "Name": "OEBPS/chap041.xhtml",
+            "Value": "lyWruUgFVk60+lToY8i4Sw=="
+          },
+          {
+            "Name": "OEBPS/chap012.xhtml",
+            "Value": "yu9MOCi1yhqE3Ll4BjbQjg=="
+          },
+          {
+            "Name": "OEBPS/chap032.xhtml",
+            "Value": "C4potJO85rtX7nSf40mFVg=="
+          },
+          {
+            "Name": "OEBPS/chap027.xhtml",
+            "Value": "h+7RAlskBjh3s8HULa9Tsg=="
+          },
+          {
+            "Name": "OEBPS/chap019.xhtml",
+            "Value": "3Kxq1FgKSbF4Po/ndL3Ehw=="
+          },
+          {
+            "Name": "OEBPS/chap040.xhtml",
+            "Value": "94ipGDqo5PMB3rjsLwTvgg=="
+          },
+          {
+            "Name": "OEBPS/chap007.xhtml",
+            "Value": "mj2YZ/S19pEcfwnfdmJUZg=="
+          },
+          {
+            "Name": "OEBPS/chap020.xhtml",
+            "Value": "MLG/WmCwdrBw3I6HWrSE5w=="
+          },
+          {
+            "Name": "OEBPS/chap004.xhtml",
+            "Value": "MGjm7AyvdSnm3XKSYQIfbw=="
+          },
+          {
+            "Name": "OEBPS/pageMap.xml",
+            "Value": "/hexsiLt8baImHspZWw2iA=="
+          },
+          {
+            "Name": "OEBPS/images/logonrf.jpg",
+            "Value": "bI34uUBpf6kaCePbt5ElTA=="
+          },
+          {
+            "Name": "OEBPS/chap015.xhtml",
+            "Value": "HM2Ueh7C39LApCZmx2rI9w=="
+          },
+          {
+            "Name": "OEBPS/chap035.xhtml",
+            "Value": "A/eiIwIEx1xt+Z76zyvfEA=="
+          },
+          {
+            "Name": "OEBPS/cover.xhtml",
+            "Value": "w/EalQOLHDRCCPDMrX2lMA=="
+          }
+        ]
+      },
+      "Generic": {
+        "ContentUrls": [
+          {
+            "DisplayProfile": "Generic",
+            "DRMType": "KDRM",
+            "DownloadUrl": "https://getbook.kobo.com/koboid-prod-public/gallimard-epub-289b486d-1bf8-4085-a087-7f8ba56d6880.epub",
+            "UrlFormat": "EPUB3",
+            "ByteSize": 1824778
+          }
+        ],
+        "ContentKeys": [
+          {
+            "Name": "OEBPS/fonts/AGARAMOI.ttf",
+            "Value": "bOyPkX1lYKoSYxVf7Pgm6w=="
+          },
+          {
+            "Name": "OEBPS/images/cover.jpg",
+            "Value": "ER83ceITk19ydxV6TBFfDQ=="
+          },
+          {
+            "Name": "OEBPS/dedi001.xhtml",
+            "Value": "CgxF6kQBz6icDnpGKbx+3g=="
+          },
+          {
+            "Name": "OEBPS/chap023.xhtml",
+            "Value": "4201yrfqG1fiRF9uD9C88w=="
+          },
+          {
+            "Name": "OEBPS/fonts/AGARAMOR.ttf",
+            "Value": "jB7PD9sClTdwuxqsmyRdtQ=="
+          },
+          {
+            "Name": "OEBPS/chap033.xhtml",
+            "Value": "ANXnZvZ12tGv80w+LxfhKg=="
+          },
+          {
+            "Name": "OEBPS/chap013.xhtml",
+            "Value": "QmDENHTnrtk1aubYSCVb0Q=="
+          },
+          {
+            "Name": "OEBPS/chap003.xhtml",
+            "Value": "0fpMY6DYBgBadTtLc3lKlg=="
+          },
+          {
+            "Name": "OEBPS/chap043.xhtml",
+            "Value": "PYpM6yYVhF5WcltfeXw5aw=="
+          },
+          {
+            "Name": "OEBPS/chap039.xhtml",
+            "Value": "c8YwdWutEQ3QxtFsd3xNTQ=="
+          },
+          {
+            "Name": "OEBPS/chap026.xhtml",
+            "Value": "iy9CoiBt0WhQ4ZbSxzOYyA=="
+          },
+          {
+            "Name": "OEBPS/chap036.xhtml",
+            "Value": "kcixnSb/BJMkxqQHwqTm7A=="
+          },
+          {
+            "Name": "OEBPS/chap046.xhtml",
+            "Value": "GLRiGH0aNxvQ5mr1WhEYNQ=="
+          },
+          {
+            "Name": "OEBPS/chap016.xhtml",
+            "Value": "Ut6aG6cVf3dgZKpORkHehw=="
+          },
+          {
+            "Name": "OEBPS/chap006.xhtml",
+            "Value": "K0LVfdKZT1SV9t0WVKL3mg=="
+          },
+          {
+            "Name": "OEBPS/chap037.xhtml",
+            "Value": "0yivCDXZm6S6vjiG+ZvInQ=="
+          },
+          {
+            "Name": "OEBPS/chap002.xhtml",
+            "Value": "RXt7SdzRdNlxC6MD7AXrKg=="
+          },
+          {
+            "Name": "OEBPS/chap022.xhtml",
+            "Value": "Ilr4TfyHUIvsRVyH+DNX9w=="
+          },
+          {
+            "Name": "OEBPS/chap017.xhtml",
+            "Value": "xPKQQHT74qxZ5x/a7b7Cmw=="
+          },
+          {
+            "Name": "OEBPS/chap030.xhtml",
+            "Value": "zOmmXw8bm8CVyu+xUpXF1A=="
+          },
+          {
+            "Name": "OEBPS/chap009.xhtml",
+            "Value": "G/YNFO3AazjnTO1+Blz5Lw=="
+          },
+          {
+            "Name": "OEBPS/chap029.xhtml",
+            "Value": "IVvzf8ML25yHd23PR6ecUA=="
+          },
+          {
+            "Name": "OEBPS/tit001.xhtml",
+            "Value": "rGhi7gscFqMNCVO5hB980Q=="
+          },
+          {
+            "Name": "OEBPS/print.xhtml",
+            "Value": "HcBbzjAyP3VZNn4oPVTAxw=="
+          },
+          {
+            "Name": "OEBPS/chap014.xhtml",
+            "Value": "WI35mZX03DIektL1PeWfTg=="
+          },
+          {
+            "Name": "OEBPS/same001.xhtml",
+            "Value": "bpivwifk7QWiYODc8h+SwA=="
+          },
+          {
+            "Name": "OEBPS/chap025.xhtml",
+            "Value": "nm3WdfzuMvrm+ptJo9W3NQ=="
+          },
+          {
+            "Name": "OEBPS/chap005.xhtml",
+            "Value": "028F2Wf+07VCxXkfeViPXQ=="
+          },
+          {
+            "Name": "OEBPS/epi001.xhtml",
+            "Value": "KeaPWBiiWXQQSlYnKuUaoQ=="
+          },
+          {
+            "Name": "OEBPS/chap010.xhtml",
+            "Value": "T35Lk+CBzMVC6DDbTwMwqA=="
+          },
+          {
+            "Name": "OEBPS/chap042.xhtml",
+            "Value": "Jb/Fcc/S9CTlM711oIhkkQ=="
+          },
+          {
+            "Name": "OEBPS/chap045.xhtml",
+            "Value": "YBr64mLeIzVgk9i069VUuA=="
+          },
+          {
+            "Name": "OEBPS/chap018.xhtml",
+            "Value": "8hyDtmVKNejuYBUj0gFP9A=="
+          },
+          {
+            "Name": "OEBPS/chap031.xhtml",
+            "Value": "H5F9FySWBKDsRHoz/q3lVg=="
+          },
+          {
+            "Name": "OEBPS/chap038.xhtml",
+            "Value": "mtrAQIbuAoVd5KK2qplfaA=="
+          },
+          {
+            "Name": "OEBPS/chap008.xhtml",
+            "Value": "fuMpMzcagMEjx+Abee5G3g=="
+          },
+          {
+            "Name": "OEBPS/chap028.xhtml",
+            "Value": "7w6qS3Lr7wHfQ7M+D45PgQ=="
+          },
+          {
+            "Name": "OEBPS/chap044.xhtml",
+            "Value": "N3kX/8VQRMuSo2SXeWQvtw=="
+          },
+          {
+            "Name": "OEBPS/chap024.xhtml",
+            "Value": "CjFad71IPqfawQxBtBinvw=="
+          },
+          {
+            "Name": "OEBPS/chap034.xhtml",
+            "Value": "sIv9UrfqK+qraC8n3+55vQ=="
+          },
+          {
+            "Name": "OEBPS/chap001.xhtml",
+            "Value": "ikth3qnQ7sEgV8tPAPKR7Q=="
+          },
+          {
+            "Name": "OEBPS/copy.xhtml",
+            "Value": "oqPXvYDGpQ/H4QSlnGKwCQ=="
+          },
+          {
+            "Name": "OEBPS/chap011.xhtml",
+            "Value": "QY2lW5Ar4k+aZPIOU2MtRw=="
+          },
+          {
+            "Name": "OEBPS/chap021.xhtml",
+            "Value": "eYimB/TIYFIDgo13YqMLdw=="
+          },
+          {
+            "Name": "OEBPS/chap041.xhtml",
+            "Value": "lyWruUgFVk60+lToY8i4Sw=="
+          },
+          {
+            "Name": "OEBPS/chap012.xhtml",
+            "Value": "yu9MOCi1yhqE3Ll4BjbQjg=="
+          },
+          {
+            "Name": "OEBPS/chap032.xhtml",
+            "Value": "C4potJO85rtX7nSf40mFVg=="
+          },
+          {
+            "Name": "OEBPS/chap027.xhtml",
+            "Value": "h+7RAlskBjh3s8HULa9Tsg=="
+          },
+          {
+            "Name": "OEBPS/chap019.xhtml",
+            "Value": "3Kxq1FgKSbF4Po/ndL3Ehw=="
+          },
+          {
+            "Name": "OEBPS/chap040.xhtml",
+            "Value": "94ipGDqo5PMB3rjsLwTvgg=="
+          },
+          {
+            "Name": "OEBPS/chap007.xhtml",
+            "Value": "mj2YZ/S19pEcfwnfdmJUZg=="
+          },
+          {
+            "Name": "OEBPS/chap020.xhtml",
+            "Value": "MLG/WmCwdrBw3I6HWrSE5w=="
+          },
+          {
+            "Name": "OEBPS/chap004.xhtml",
+            "Value": "MGjm7AyvdSnm3XKSYQIfbw=="
+          },
+          {
+            "Name": "OEBPS/pageMap.xml",
+            "Value": "/hexsiLt8baImHspZWw2iA=="
+          },
+          {
+            "Name": "OEBPS/images/logonrf.jpg",
+            "Value": "bI34uUBpf6kaCePbt5ElTA=="
+          },
+          {
+            "Name": "OEBPS/chap015.xhtml",
+            "Value": "HM2Ueh7C39LApCZmx2rI9w=="
+          },
+          {
+            "Name": "OEBPS/chap035.xhtml",
+            "Value": "A/eiIwIEx1xt+Z76zyvfEA=="
+          },
+          {
+            "Name": "OEBPS/cover.xhtml",
+            "Value": "w/EalQOLHDRCCPDMrX2lMA=="
+          }
+        ]
+      }
+    }
+  },
+  "avec_acsm_desktop": {
+    "title": "Nous",
+    "product_id": "7631ff59-eece-4930-94cf-2253203aace6",
+    "profiles": {
+      "Android": {
+        "ContentUrls": [
+          {
+            "DisplayProfile": "Android",
+            "DRMType": "KDRM",
+            "DownloadUrl": "https://getbook.kobo.com/koboid-prod-public/actessud-epub-05a3db62-5cbe-47cc-8cd9-4c19f79e429a.epub",
+            "UrlFormat": "KEPUB",
+            "ByteSize": 1156772
+          }
+        ],
+        "ContentKeys": [
+          {
+            "Name": "OEBPS/chap032.html",
+            "Value": "imqBvkCB4+Q9/IP2JsYZSQ=="
+          },
+          {
+            "Name": "OEBPS/chap037.html",
+            "Value": "kdk6PdkOhvJU66XECpusvA=="
+          },
+          {
+            "Name": "OEBPS/chap018.html",
+            "Value": "QId6okVivDsHFZsEjb3PHA=="
+          },
+          {
+            "Name": "OEBPS/mobitoc_tdm.html",
+            "Value": "4wDQyLnbZqZknAMlRebE0Q=="
+          },
+          {
+            "Name": "OEBPS/chap033.html",
+            "Value": "o/Qy91WTnHQtNmukYYmi/w=="
+          },
+          {
+            "Name": "OEBPS/chap013.html",
+            "Value": "ymSlKx0XZ/yqKHB6mZgW0Q=="
+          },
+          {
+            "Name": "OEBPS/chap015.html",
+            "Value": "mVhtTmOwWzvtUw0sCVRrJg=="
+          },
+          {
+            "Name": "OEBPS/chap005.html",
+            "Value": "KBSsrSKFJAd6dltZuFkUMQ=="
+          },
+          {
+            "Name": "OEBPS/chap007.html",
+            "Value": "wQGniFI2qINcodieTdglKw=="
+          },
+          {
+            "Name": "OEBPS/chap001.html",
+            "Value": "U1poNUtByMBsqB4mCui/gg=="
+          },
+          {
+            "Name": "OEBPS/chap035.html",
+            "Value": "wEROwdIbzDfSzFXQH0dZyQ=="
+          },
+          {
+            "Name": "OEBPS/rema001.html",
+            "Value": "bgDdsc98gD+YTdvCvvWUDg=="
+          },
+          {
+            "Name": "OEBPS/fonts/LiberationSerif-Bold.ttf",
+            "Value": "cfr5FpA/mSSZdPpMCm/rog=="
+          },
+          {
+            "Name": "OEBPS/fonts/LiberationSerif-Italic.ttf",
+            "Value": "eECJoGVfYLu55psRHdB7mw=="
+          },
+          {
+            "Name": "OEBPS/chap029.html",
+            "Value": "9SrW3i6g5J7aDVbjiR//Og=="
+          },
+          {
+            "Name": "OEBPS/chap042.html",
+            "Value": "x5lquerCMJyMw3B9VeAYrg=="
+          },
+          {
+            "Name": "OEBPS/chap020.html",
+            "Value": "PsXy24KsD9IQUYAPaBL1QQ=="
+          },
+          {
+            "Name": "OEBPS/chap036.html",
+            "Value": "qCX2PaszIgJk5blBQMvY7g=="
+          },
+          {
+            "Name": "OEBPS/chap003.html",
+            "Value": "vIR5QzU4dD1W7u8W/7jI+Q=="
+          },
+          {
+            "Name": "OEBPS/images/cover.jpg",
+            "Value": "3/wuNlSkSqSN4R9DdF/aKQ=="
+          },
+          {
+            "Name": "OEBPS/chap004.html",
+            "Value": "rhHC9jGZuUNBSvbTVoXctw=="
+          },
+          {
+            "Name": "OEBPS/chap025.html",
+            "Value": "dHNVG4CU1uyWKOc0vO6gAA=="
+          },
+          {
+            "Name": "OEBPS/chap019.html",
+            "Value": "Q+o2Mt+7Ik4W2o1EruCsqQ=="
+          },
+          {
+            "Name": "OEBPS/chap026.html",
+            "Value": "jtO74BVS6uJ7GQjRETtw3Q=="
+          },
+          {
+            "Name": "OEBPS/chap039.html",
+            "Value": "gbKF8Q93Cddm6srfu1RK+g=="
+          },
+          {
+            "Name": "OEBPS/chap009.html",
+            "Value": "DTOnJkFIYy3wsvrP3FE0OA=="
+          },
+          {
+            "Name": "OEBPS/chap006.html",
+            "Value": "YvW3OyfZwGnlCleXjveR6Q=="
+          },
+          {
+            "Name": "OEBPS/chap038.html",
+            "Value": "Crhy0na3iZDx/ytdW656tA=="
+          },
+          {
+            "Name": "OEBPS/chap011.html",
+            "Value": "Ik7g2CsYsgx1iS3clbYE8A=="
+          },
+          {
+            "Name": "OEBPS/fonts/LiberationSerif-BoldItalic.ttf",
+            "Value": "tr8AqmTmVmiBqN1gLK6eyg=="
+          },
+          {
+            "Name": "OEBPS/chap012.html",
+            "Value": "es6BvvUVqeclLLKvl2v7vw=="
+          },
+          {
+            "Name": "OEBPS/same001.html",
+            "Value": "KYoBlQVofMMDy0NfJhvs6A=="
+          },
+          {
+            "Name": "OEBPS/chap021.html",
+            "Value": "7ZYFcAcVYA7XwcMl+2uGjQ=="
+          },
+          {
+            "Name": "OEBPS/chap016.html",
+            "Value": "N89YyjaQkfyXUXNDB4w/iw=="
+          },
+          {
+            "Name": "OEBPS/chap030.html",
+            "Value": "qw0ljcsfxNnMjef/tvnH5g=="
+          },
+          {
+            "Name": "OEBPS/chap014.html",
+            "Value": "K6kT6VyspcAJE/HH61U+cQ=="
+          },
+          {
+            "Name": "OEBPS/part001.html",
+            "Value": "K6a+GQaJW32IGOA0quWGCw=="
+          },
+          {
+            "Name": "OEBPS/chap041.html",
+            "Value": "K0XO95NB2fKM8YUKlE7hkA=="
+          },
+          {
+            "Name": "OEBPS/chap034.html",
+            "Value": "P+VcVzrsUvnfEPv3lp9XJg=="
+          },
+          {
+            "Name": "OEBPS/fonts/LiberationSerif-Regular.ttf",
+            "Value": "eX9SMVtj4jwV32QCUQUF6A=="
+          },
+          {
+            "Name": "OEBPS/chap002.html",
+            "Value": "BsKHifj3XGe+lJgAoRSKxg=="
+          },
+          {
+            "Name": "OEBPS/chap031.html",
+            "Value": "z6bJiYA7A+nk5C5fy51Dkw=="
+          },
+          {
+            "Name": "OEBPS/titl001.html",
+            "Value": "8AM/YekLLgdX7mBqpnA//w=="
+          },
+          {
+            "Name": "OEBPS/chap022.html",
+            "Value": "N+Ai4BkXvUUaOwHRer8QnA=="
+          },
+          {
+            "Name": "OEBPS/cover.html",
+            "Value": "YCXSuKQXVMBH4wqDcNHCiA=="
+          },
+          {
+            "Name": "OEBPS/chap024.html",
+            "Value": "I0lc72gQuau3YvCwFIIl+A=="
+          },
+          {
+            "Name": "OEBPS/chap008.html",
+            "Value": "81+0tjjSCnoyM+ly022mQg=="
+          },
+          {
+            "Name": "OEBPS/chap017.html",
+            "Value": "xO3AjGzbl3We3bfhey7pcg=="
+          },
+          {
+            "Name": "OEBPS/chap027.html",
+            "Value": "fboW0PhYGR9TZ2JX0KxgFA=="
+          },
+          {
+            "Name": "OEBPS/chap010.html",
+            "Value": "Xkncw5YLrSqLkNWk/iWjhQ=="
+          },
+          {
+            "Name": "OEBPS/chap023.html",
+            "Value": "yXCZvrYDbg25+AOSftxCOw=="
+          },
+          {
+            "Name": "OEBPS/chap040.html",
+            "Value": "QygOsvXoEWZmRUNIVGlFtA=="
+          },
+          {
+            "Name": "OEBPS/chap028.html",
+            "Value": "Zv3pgfcJKsgf7DCbHQHLlg=="
+          }
+        ]
+      },
+      "Desktop": {
+        "ContentUrls": [
+          {
+            "DisplayProfile": "Desktop",
+            "DRMType": "AdobeDrm",
+            "DownloadUrl": "https://acs4.kobo.com/fulfillment/URLLink.acsm?action=enterorder&ordersource=Shortcovers&orderid=0b807dd9-55b8-447d-a356-4c072275e6b2&resid=urn%3auuid%3a63cf03b4-931f-4d0d-8e4b-dc204169c481&gbauthdate=10%2f28%2f2026+05%3a31+UTC&dateval=1793208674&gblver=4&auth=c14570d7359ba0d98599a220d4a98dbc2aa75ffc",
+            "UrlFormat": "EPUB",
+            "ByteSize": 675850,
+            "DownloadUrl_preview": "https://acs4.kobo.com/fulfillment/URLLink.acsm?action=enterorder&ordersource=Shortcovers&orderid=0b8…",
+            "DownloadUrl_host": "acs4.kobo.com"
+          }
+        ],
+        "ContentKeys": [
+          {
+            "Name": "OEBPS/chap032.html",
+            "Value": "imqBvkCB4+Q9/IP2JsYZSQ=="
+          },
+          {
+            "Name": "OEBPS/chap037.html",
+            "Value": "kdk6PdkOhvJU66XECpusvA=="
+          },
+          {
+            "Name": "OEBPS/chap018.html",
+            "Value": "QId6okVivDsHFZsEjb3PHA=="
+          },
+          {
+            "Name": "OEBPS/mobitoc_tdm.html",
+            "Value": "4wDQyLnbZqZknAMlRebE0Q=="
+          },
+          {
+            "Name": "OEBPS/chap033.html",
+            "Value": "o/Qy91WTnHQtNmukYYmi/w=="
+          },
+          {
+            "Name": "OEBPS/chap013.html",
+            "Value": "ymSlKx0XZ/yqKHB6mZgW0Q=="
+          },
+          {
+            "Name": "OEBPS/chap015.html",
+            "Value": "mVhtTmOwWzvtUw0sCVRrJg=="
+          },
+          {
+            "Name": "OEBPS/chap005.html",
+            "Value": "KBSsrSKFJAd6dltZuFkUMQ=="
+          },
+          {
+            "Name": "OEBPS/chap007.html",
+            "Value": "wQGniFI2qINcodieTdglKw=="
+          },
+          {
+            "Name": "OEBPS/chap001.html",
+            "Value": "U1poNUtByMBsqB4mCui/gg=="
+          },
+          {
+            "Name": "OEBPS/chap035.html",
+            "Value": "wEROwdIbzDfSzFXQH0dZyQ=="
+          },
+          {
+            "Name": "OEBPS/rema001.html",
+            "Value": "bgDdsc98gD+YTdvCvvWUDg=="
+          },
+          {
+            "Name": "OEBPS/fonts/LiberationSerif-Bold.ttf",
+            "Value": "cfr5FpA/mSSZdPpMCm/rog=="
+          },
+          {
+            "Name": "OEBPS/fonts/LiberationSerif-Italic.ttf",
+            "Value": "eECJoGVfYLu55psRHdB7mw=="
+          },
+          {
+            "Name": "OEBPS/chap029.html",
+            "Value": "9SrW3i6g5J7aDVbjiR//Og=="
+          },
+          {
+            "Name": "OEBPS/chap042.html",
+            "Value": "x5lquerCMJyMw3B9VeAYrg=="
+          },
+          {
+            "Name": "OEBPS/chap020.html",
+            "Value": "PsXy24KsD9IQUYAPaBL1QQ=="
+          },
+          {
+            "Name": "OEBPS/chap036.html",
+            "Value": "qCX2PaszIgJk5blBQMvY7g=="
+          },
+          {
+            "Name": "OEBPS/chap003.html",
+            "Value": "vIR5QzU4dD1W7u8W/7jI+Q=="
+          },
+          {
+            "Name": "OEBPS/images/cover.jpg",
+            "Value": "3/wuNlSkSqSN4R9DdF/aKQ=="
+          },
+          {
+            "Name": "OEBPS/chap004.html",
+            "Value": "rhHC9jGZuUNBSvbTVoXctw=="
+          },
+          {
+            "Name": "OEBPS/chap025.html",
+            "Value": "dHNVG4CU1uyWKOc0vO6gAA=="
+          },
+          {
+            "Name": "OEBPS/chap019.html",
+            "Value": "Q+o2Mt+7Ik4W2o1EruCsqQ=="
+          },
+          {
+            "Name": "OEBPS/chap026.html",
+            "Value": "jtO74BVS6uJ7GQjRETtw3Q=="
+          },
+          {
+            "Name": "OEBPS/chap039.html",
+            "Value": "gbKF8Q93Cddm6srfu1RK+g=="
+          },
+          {
+            "Name": "OEBPS/chap009.html",
+            "Value": "DTOnJkFIYy3wsvrP3FE0OA=="
+          },
+          {
+            "Name": "OEBPS/chap006.html",
+            "Value": "YvW3OyfZwGnlCleXjveR6Q=="
+          },
+          {
+            "Name": "OEBPS/chap038.html",
+            "Value": "Crhy0na3iZDx/ytdW656tA=="
+          },
+          {
+            "Name": "OEBPS/chap011.html",
+            "Value": "Ik7g2CsYsgx1iS3clbYE8A=="
+          },
+          {
+            "Name": "OEBPS/fonts/LiberationSerif-BoldItalic.ttf",
+            "Value": "tr8AqmTmVmiBqN1gLK6eyg=="
+          },
+          {
+            "Name": "OEBPS/chap012.html",
+            "Value": "es6BvvUVqeclLLKvl2v7vw=="
+          },
+          {
+            "Name": "OEBPS/same001.html",
+            "Value": "KYoBlQVofMMDy0NfJhvs6A=="
+          },
+          {
+            "Name": "OEBPS/chap021.html",
+            "Value": "7ZYFcAcVYA7XwcMl+2uGjQ=="
+          },
+          {
+            "Name": "OEBPS/chap016.html",
+            "Value": "N89YyjaQkfyXUXNDB4w/iw=="
+          },
+          {
+            "Name": "OEBPS/chap030.html",
+            "Value": "qw0ljcsfxNnMjef/tvnH5g=="
+          },
+          {
+            "Name": "OEBPS/chap014.html",
+            "Value": "K6kT6VyspcAJE/HH61U+cQ=="
+          },
+          {
+            "Name": "OEBPS/part001.html",
+            "Value": "K6a+GQaJW32IGOA0quWGCw=="
+          },
+          {
+            "Name": "OEBPS/chap041.html",
+            "Value": "K0XO95NB2fKM8YUKlE7hkA=="
+          },
+          {
+            "Name": "OEBPS/chap034.html",
+            "Value": "P+VcVzrsUvnfEPv3lp9XJg=="
+          },
+          {
+            "Name": "OEBPS/fonts/LiberationSerif-Regular.ttf",
+            "Value": "eX9SMVtj4jwV32QCUQUF6A=="
+          },
+          {
+            "Name": "OEBPS/chap002.html",
+            "Value": "BsKHifj3XGe+lJgAoRSKxg=="
+          },
+          {
+            "Name": "OEBPS/chap031.html",
+            "Value": "z6bJiYA7A+nk5C5fy51Dkw=="
+          },
+          {
+            "Name": "OEBPS/titl001.html",
+            "Value": "8AM/YekLLgdX7mBqpnA//w=="
+          },
+          {
+            "Name": "OEBPS/chap022.html",
+            "Value": "N+Ai4BkXvUUaOwHRer8QnA=="
+          },
+          {
+            "Name": "OEBPS/cover.html",
+            "Value": "YCXSuKQXVMBH4wqDcNHCiA=="
+          },
+          {
+            "Name": "OEBPS/chap024.html",
+            "Value": "I0lc72gQuau3YvCwFIIl+A=="
+          },
+          {
+            "Name": "OEBPS/chap008.html",
+            "Value": "81+0tjjSCnoyM+ly022mQg=="
+          },
+          {
+            "Name": "OEBPS/chap017.html",
+            "Value": "xO3AjGzbl3We3bfhey7pcg=="
+          },
+          {
+            "Name": "OEBPS/chap027.html",
+            "Value": "fboW0PhYGR9TZ2JX0KxgFA=="
+          },
+          {
+            "Name": "OEBPS/chap010.html",
+            "Value": "Xkncw5YLrSqLkNWk/iWjhQ=="
+          },
+          {
+            "Name": "OEBPS/chap023.html",
+            "Value": "yXCZvrYDbg25+AOSftxCOw=="
+          },
+          {
+            "Name": "OEBPS/chap040.html",
+            "Value": "QygOsvXoEWZmRUNIVGlFtA=="
+          },
+          {
+            "Name": "OEBPS/chap028.html",
+            "Value": "Zv3pgfcJKsgf7DCbHQHLlg=="
+          }
+        ]
+      },
+      "Generic": {
+        "ContentUrls": [],
+        "ContentKeys": [
+          {
+            "Name": "OEBPS/chap032.html",
+            "Value": "imqBvkCB4+Q9/IP2JsYZSQ=="
+          },
+          {
+            "Name": "OEBPS/chap037.html",
+            "Value": "kdk6PdkOhvJU66XECpusvA=="
+          },
+          {
+            "Name": "OEBPS/chap018.html",
+            "Value": "QId6okVivDsHFZsEjb3PHA=="
+          },
+          {
+            "Name": "OEBPS/mobitoc_tdm.html",
+            "Value": "4wDQyLnbZqZknAMlRebE0Q=="
+          },
+          {
+            "Name": "OEBPS/chap033.html",
+            "Value": "o/Qy91WTnHQtNmukYYmi/w=="
+          },
+          {
+            "Name": "OEBPS/chap013.html",
+            "Value": "ymSlKx0XZ/yqKHB6mZgW0Q=="
+          },
+          {
+            "Name": "OEBPS/chap015.html",
+            "Value": "mVhtTmOwWzvtUw0sCVRrJg=="
+          },
+          {
+            "Name": "OEBPS/chap005.html",
+            "Value": "KBSsrSKFJAd6dltZuFkUMQ=="
+          },
+          {
+            "Name": "OEBPS/chap007.html",
+            "Value": "wQGniFI2qINcodieTdglKw=="
+          },
+          {
+            "Name": "OEBPS/chap001.html",
+            "Value": "U1poNUtByMBsqB4mCui/gg=="
+          },
+          {
+            "Name": "OEBPS/chap035.html",
+            "Value": "wEROwdIbzDfSzFXQH0dZyQ=="
+          },
+          {
+            "Name": "OEBPS/rema001.html",
+            "Value": "bgDdsc98gD+YTdvCvvWUDg=="
+          },
+          {
+            "Name": "OEBPS/fonts/LiberationSerif-Bold.ttf",
+            "Value": "cfr5FpA/mSSZdPpMCm/rog=="
+          },
+          {
+            "Name": "OEBPS/fonts/LiberationSerif-Italic.ttf",
+            "Value": "eECJoGVfYLu55psRHdB7mw=="
+          },
+          {
+            "Name": "OEBPS/chap029.html",
+            "Value": "9SrW3i6g5J7aDVbjiR//Og=="
+          },
+          {
+            "Name": "OEBPS/chap042.html",
+            "Value": "x5lquerCMJyMw3B9VeAYrg=="
+          },
+          {
+            "Name": "OEBPS/chap020.html",
+            "Value": "PsXy24KsD9IQUYAPaBL1QQ=="
+          },
+          {
+            "Name": "OEBPS/chap036.html",
+            "Value": "qCX2PaszIgJk5blBQMvY7g=="
+          },
+          {
+            "Name": "OEBPS/chap003.html",
+            "Value": "vIR5QzU4dD1W7u8W/7jI+Q=="
+          },
+          {
+            "Name": "OEBPS/images/cover.jpg",
+            "Value": "3/wuNlSkSqSN4R9DdF/aKQ=="
+          },
+          {
+            "Name": "OEBPS/chap004.html",
+            "Value": "rhHC9jGZuUNBSvbTVoXctw=="
+          },
+          {
+            "Name": "OEBPS/chap025.html",
+            "Value": "dHNVG4CU1uyWKOc0vO6gAA=="
+          },
+          {
+            "Name": "OEBPS/chap019.html",
+            "Value": "Q+o2Mt+7Ik4W2o1EruCsqQ=="
+          },
+          {
+            "Name": "OEBPS/chap026.html",
+            "Value": "jtO74BVS6uJ7GQjRETtw3Q=="
+          },
+          {
+            "Name": "OEBPS/chap039.html",
+            "Value": "gbKF8Q93Cddm6srfu1RK+g=="
+          },
+          {
+            "Name": "OEBPS/chap009.html",
+            "Value": "DTOnJkFIYy3wsvrP3FE0OA=="
+          },
+          {
+            "Name": "OEBPS/chap006.html",
+            "Value": "YvW3OyfZwGnlCleXjveR6Q=="
+          },
+          {
+            "Name": "OEBPS/chap038.html",
+            "Value": "Crhy0na3iZDx/ytdW656tA=="
+          },
+          {
+            "Name": "OEBPS/chap011.html",
+            "Value": "Ik7g2CsYsgx1iS3clbYE8A=="
+          },
+          {
+            "Name": "OEBPS/fonts/LiberationSerif-BoldItalic.ttf",
+            "Value": "tr8AqmTmVmiBqN1gLK6eyg=="
+          },
+          {
+            "Name": "OEBPS/chap012.html",
+            "Value": "es6BvvUVqeclLLKvl2v7vw=="
+          },
+          {
+            "Name": "OEBPS/same001.html",
+            "Value": "KYoBlQVofMMDy0NfJhvs6A=="
+          },
+          {
+            "Name": "OEBPS/chap021.html",
+            "Value": "7ZYFcAcVYA7XwcMl+2uGjQ=="
+          },
+          {
+            "Name": "OEBPS/chap016.html",
+            "Value": "N89YyjaQkfyXUXNDB4w/iw=="
+          },
+          {
+            "Name": "OEBPS/chap030.html",
+            "Value": "qw0ljcsfxNnMjef/tvnH5g=="
+          },
+          {
+            "Name": "OEBPS/chap014.html",
+            "Value": "K6kT6VyspcAJE/HH61U+cQ=="
+          },
+          {
+            "Name": "OEBPS/part001.html",
+            "Value": "K6a+GQaJW32IGOA0quWGCw=="
+          },
+          {
+            "Name": "OEBPS/chap041.html",
+            "Value": "K0XO95NB2fKM8YUKlE7hkA=="
+          },
+          {
+            "Name": "OEBPS/chap034.html",
+            "Value": "P+VcVzrsUvnfEPv3lp9XJg=="
+          },
+          {
+            "Name": "OEBPS/fonts/LiberationSerif-Regular.ttf",
+            "Value": "eX9SMVtj4jwV32QCUQUF6A=="
+          },
+          {
+            "Name": "OEBPS/chap002.html",
+            "Value": "BsKHifj3XGe+lJgAoRSKxg=="
+          },
+          {
+            "Name": "OEBPS/chap031.html",
+            "Value": "z6bJiYA7A+nk5C5fy51Dkw=="
+          },
+          {
+            "Name": "OEBPS/titl001.html",
+            "Value": "8AM/YekLLgdX7mBqpnA//w=="
+          },
+          {
+            "Name": "OEBPS/chap022.html",
+            "Value": "N+Ai4BkXvUUaOwHRer8QnA=="
+          },
+          {
+            "Name": "OEBPS/cover.html",
+            "Value": "YCXSuKQXVMBH4wqDcNHCiA=="
+          },
+          {
+            "Name": "OEBPS/chap024.html",
+            "Value": "I0lc72gQuau3YvCwFIIl+A=="
+          },
+          {
+            "Name": "OEBPS/chap008.html",
+            "Value": "81+0tjjSCnoyM+ly022mQg=="
+          },
+          {
+            "Name": "OEBPS/chap017.html",
+            "Value": "xO3AjGzbl3We3bfhey7pcg=="
+          },
+          {
+            "Name": "OEBPS/chap027.html",
+            "Value": "fboW0PhYGR9TZ2JX0KxgFA=="
+          },
+          {
+            "Name": "OEBPS/chap010.html",
+            "Value": "Xkncw5YLrSqLkNWk/iWjhQ=="
+          },
+          {
+            "Name": "OEBPS/chap023.html",
+            "Value": "yXCZvrYDbg25+AOSftxCOw=="
+          },
+          {
+            "Name": "OEBPS/chap040.html",
+            "Value": "QygOsvXoEWZmRUNIVGlFtA=="
+          },
+          {
+            "Name": "OEBPS/chap028.html",
+            "Value": "Zv3pgfcJKsgf7DCbHQHLlg=="
+          }
+        ]
+      }
+    }
+  }
+}
