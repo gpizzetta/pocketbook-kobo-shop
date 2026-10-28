@@ -21,6 +21,15 @@ tools/acsm_fulfill/asn1crypto/
 tools/acsm_fulfill/oscrypto/
 ascm_exemple/*.acsm
 ascm_exemple/*.ascm
+ascm_exemple/*.iso
+ascm_exemple/*.ISO
+*.iso
+*.ISO
+
+# Binaires / caches locaux
+docs/spikes/sample-*.epub
+**/__pycache__/
+*.pyc
 
 # Editor / OS
 .DS_Store
