@@ -700,7 +700,8 @@ static BookDrmKind classify_drm(const char *drm) {
 }
 
 int kobo_book_downloadable(const BookEntry *book) {
-  return book->drm == BOOK_DRM_SIGNED_NO_DRM || book->drm == BOOK_DRM_ADOBE;
+  return book->drm == BOOK_DRM_SIGNED_NO_DRM || book->drm == BOOK_DRM_ADOBE ||
+         book->drm == BOOK_DRM_NONE_SAMPLE;
 }
 
 typedef struct {
@@ -814,7 +815,8 @@ static int content_access_profile(AppConfig *cfg, BookEntry *book,
     snprintf(out->format, sizeof(out->format), "%s", best_fmt);
   }
   if (best_url &&
-      (prefer == BOOK_DRM_SIGNED_NO_DRM || prefer == BOOK_DRM_ADOBE)) {
+      (prefer == BOOK_DRM_SIGNED_NO_DRM || prefer == BOOK_DRM_ADOBE ||
+       prefer == BOOK_DRM_NONE_SAMPLE)) {
     out->url = strdup(best_url);
     if (!out->url) {
       cJSON_Delete(root);
@@ -898,9 +900,13 @@ static int content_access_pick(AppConfig *cfg, BookEntry *book, char **out_url,
     return 0;
   }
 
-  /* Pas d'Adobe / free : KDRM Android (fichier chiffré archivable) */
+  /* Extrait (DRMType None) ou KDRM Android */
   if (android.drm == BOOK_DRM_NONE_SAMPLE) {
     book->drm = BOOK_DRM_NONE_SAMPLE;
+    if (android.url) {
+      *out_url = android.url;
+      android.url = NULL;
+    }
   } else if (android.drm == BOOK_DRM_KDRM || android.drm == BOOK_DRM_OTHER ||
              android.drm == BOOK_DRM_UNKNOWN) {
     book->drm = BOOK_DRM_KDRM;
@@ -965,30 +971,34 @@ int kobo_download_book(AppConfig *cfg, BookEntry *book, char *err, size_t err_le
      * automatisé pour mint WebDownloadToken, ou autre interop officielle.
      */
     snprintf(book->local_path, sizeof(book->local_path), "%s", path);
-    inputFile = path;
-    filename = fname;
-    type = "epub";
-    encryptionKey = NULL;
-    encryptionKeySize = 0;
-    removeDRM(inputFile, filename, type, encryptionKey, encryptionKeySize);
+    book->downloaded = 0; /* non ouvrable par le lecteur PB */
+    snprintf(err, err_len,
+             "EPUB KDRM enregistré (chiffré) :\n%s\n\n"
+             "Non lisible sur PocketBook.\n"
+             "Pour lire : ACSM depuis kobo.com → kobo_shop_data/acsm/ "
+             "→ Menu Importer ACSM.",
+             path);
+    return 1; /* succès partiel : fichier sauvé, message informatif */
   }
 
   if (!best_url || !kobo_book_downloadable(book)) {
     free(best_url);
-    if (book->drm == BOOK_DRM_NONE_SAMPLE) {
-      snprintf(err, err_len, "Échantillon uniquement — pas le livre complet.");
-    } else {
-      snprintf(err, err_len,
-               "Pas d'ACSM via l'API pour ce titre.\n"
-               "1) kobo.com → télécharger (Adobe) → .acsm\n"
-               "2) USB → dossier kobo_shop_data/acsm/\n"
-               "3) Menu → Importer ACSM");
-    }
+    snprintf(err, err_len,
+             "Pas d'ACSM via l'API pour ce titre.\n"
+             "1) kobo.com → télécharger (Adobe) → .acsm\n"
+             "2) USB → dossier kobo_shop_data/acsm/\n"
+             "3) Menu → Importer ACSM");
     return -1;
   }
 
   char fname[KOBO_SHOP_STR];
   sanitize_filename(book->title, fname, sizeof(fname));
+  if (book->drm == BOOK_DRM_NONE_SAMPLE) {
+    size_t fl = strlen(fname);
+    if (fl + 9 < sizeof(fname)) {
+      memcpy(fname + fl, "_extrait", 9);
+    }
+  }
   char path[KOBO_SHOP_PATH];
   int is_acsm = (book->drm == BOOK_DRM_ADOBE &&
                  (strstr(best_url, ".acsm") || strstr(best_url, "acsm") ||

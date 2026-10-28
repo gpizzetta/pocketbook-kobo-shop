@@ -629,9 +629,18 @@ static const char *drm_label(const BookEntry *b) {
   case BOOK_DRM_KDRM:
     return "[sans ACSM]";
   case BOOK_DRM_NONE_SAMPLE:
-    return "[échantillon]";
+    return b->downloaded ? "[OK Extrait]" : "[Extrait]";
   default:
     return b->downloaded ? "[OK]" : "[…]";
+  }
+}
+
+/* Titre affiché : préfixe [Extrait] pour les samples */
+static void format_book_title(const BookEntry *b, char *out, size_t out_len) {
+  if (b->drm == BOOK_DRM_NONE_SAMPLE) {
+    snprintf(out, out_len, "[Extrait] %s", b->title);
+  } else {
+    snprintf(out, out_len, "%s", b->title);
   }
 }
 
@@ -819,8 +828,8 @@ static void draw_library(void) {
     int tx = cx + cw + 12;
     int text_max_w = ax - tx - 8;
     SetFont(font_body, BLACK);
-    char title[80];
-    snprintf(title, sizeof(title), "%s", b->title);
+    char title[96];
+    format_book_title(b, title, sizeof(title));
     while ((int)strlen(title) > 8 && StringWidth(title) > text_max_w) {
       size_t n = strlen(title);
       title[n - 1] = 0;
@@ -853,8 +862,12 @@ static void draw_book(void) {
   draw_header("Livre");
   draw_cover_at(b, 24, 95, 100, 150, 1);
   SetFont(font_body, BLACK);
-  DrawTextRect(140, 95, ScreenWidth() - 164, 90, b->title,
-               ALIGN_LEFT | VALIGN_TOP);
+  {
+    char tdisp[KOBO_SHOP_STR + 16];
+    format_book_title(b, tdisp, sizeof(tdisp));
+    DrawTextRect(140, 95, ScreenWidth() - 164, 90, tdisp,
+                 ALIGN_LEFT | VALIGN_TOP);
+  }
   SetFont(font_small, BLACK);
   DrawString(140, 195, b->author);
   char drm[120];
@@ -917,10 +930,6 @@ static void redraw(void) {
 
 static void do_download(void) {
   BookEntry *b = &g_books.items[g_book_sel];
-  if (b->drm == BOOK_DRM_NONE_SAMPLE) {
-    alert_ok(ICON_WARNING, "Téléchargement", "Échantillon uniquement.");
-    return;
-  }
   /* Toujours re-interroger l'API (Desktop→ACSM) : un cache [KDRM] peut
    * être obsolète, et certains titres n'offrent l'Adobe que via Desktop. */
   if (b->drm == BOOK_DRM_ADOBE && !config_bytebooks_ready(&g_cfg) &&
