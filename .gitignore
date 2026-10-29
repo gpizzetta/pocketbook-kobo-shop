@@ -41,5 +41,7 @@ docs/spikes/sample-*.epub
 apps/kobo_shop/dist/
 third_party/libgourou-src/
 third_party/adept_arm/
+third_party/adept_x86/
 kobo_shop_data/
 tools/acsm_fulfill/dist_arm/
+tools/acsm_fulfill/dist_x86/

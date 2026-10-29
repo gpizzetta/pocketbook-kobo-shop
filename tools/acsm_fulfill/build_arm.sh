@@ -14,10 +14,14 @@ JOBS="$(nproc)"
 
 export PATH="$SDK/usr/bin:$PATH"
 TRIPLE=arm-obreey-linux-gnueabi
-CC="${TRIPLE}-clang"
+# Override a host CXX/AR from the environment. The libgourou Makefile
+# uses "?=", so an exported g++/ar would silently build x86-64 objects.
+export CC="${TRIPLE}-clang"
+export CXX="${TRIPLE}-g++"
+export AR="${TRIPLE}-ar"
+export RANLIB="${TRIPLE}-ranlib"
 CXX_BUILD="${TRIPLE}-clang++"
 CXX_LINK="${TRIPLE}-g++"
-AR="${TRIPLE}-ar"
 
 COMMON_FLAGS="--sysroot=${SYSROOT} -O2 -fPIC"
 
@@ -76,7 +80,8 @@ if [[ ! -f updfparser/libupdfparser.a ]]; then
   echo "==> updfparser"
   cd updfparser
   make clean || true
-  make CROSS="${TRIPLE}-" BUILD_STATIC=1 BUILD_SHARED=0 \
+  make CROSS="${TRIPLE}-" CXX="$CXX" AR="$AR" RANLIB="$RANLIB" \
+    BUILD_STATIC=1 BUILD_SHARED=0 \
     CXXFLAGS="${COMMON_FLAGS} -I./include" -j"$JOBS"
   cd "$SRC"
 fi
@@ -89,11 +94,13 @@ rm -rf lib obj
 mkdir -p lib
 ln -sfn "$SRC/updfparser" lib/updfparser
 EXTRA_INC="-I${PREFIX}/include -I./lib/updfparser/include -I./include"
-make CROSS="${TRIPLE}-" BUILD_STATIC=1 BUILD_SHARED=0 BUILD_UTILS=0 \
+make CROSS="${TRIPLE}-" CXX="$CXX" AR="$AR" RANLIB="$RANLIB" \
+  BUILD_STATIC=1 BUILD_SHARED=0 BUILD_UTILS=0 \
   CXXFLAGS="${COMMON_FLAGS} ${EXTRA_INC}" -j"$JOBS"
-# Rebuild archive without nested .a
+# Rebuild archive without nested .a (the Makefile also packs libupdfparser.a).
 rm -f libgourou.a
 "$AR" rcs libgourou.a obj/*.o
+"$RANLIB" libgourou.a
 
 # --- utils ---
 echo "==> utils (adept_activate, acsmdownloader)"
@@ -133,3 +140,20 @@ ls -la "$OUT"
 echo
 echo "Copie sur liseuse:"
 echo "  cp $OUT/adept_activate $OUT/acsmdownloader $APP_DIST/kobo_shop.app /media/\$USER/*/applications/"
+
+# Build adept_remove
+echo "==> adept_remove"
+rm -f "$OUT/adept_remove"
+"$CXX_LINK" $COMMON_FLAGS $UTIL_INC -Wall \
+  adept_remove.cpp utils.a \
+  ../libgourou.a \
+  "$SRC/updfparser/libupdfparser.a" \
+  "$PREFIX/lib/libzip.a" \
+  "$PREFIX/lib/libpugixml.a" \
+  -lcurl -lssl -lcrypto -lcares -lz -latomic -ldl -lpthread \
+  "$SYSROOT/usr/lib/libm.a" \
+  -o "$OUT/adept_remove"
+file "$OUT/adept_remove"
+ls -la "$OUT/adept_remove"
+echo
+echo "OK"

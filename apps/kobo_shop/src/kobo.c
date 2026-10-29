@@ -965,20 +965,21 @@ int kobo_download_book(AppConfig *cfg, BookEntry *book, char *err, size_t err_le
     }
     free(best_url);
     /*
-     * TODO: trouver une solution pour les KDRM — fichier archivé ici mais
-     * non lisible sur PocketBook (chiffrement appareil). Pistes hors retrait
-     * DRM : export ACSM via site (kobo_shop_data/acsm/), éventuel client web
-     * automatisé pour mint WebDownloadToken, ou autre interop officielle.
+     * TODO: lancer adept_remove pour rendre le fichier ouvrable par le lecteur.
      */
+    char cmd[256];
+    snprintf(cmd, sizeof(cmd), "adept_remove %s", path);
+    system(cmd);
+    if (WIFEXITED(status) && WEXITSTATUS(status) == 0) {
+      snprintf(book->local_path, sizeof(book->local_path), "%s", path);
+      book->downloaded = 1;
+      return 0;
+    }
+    snprintf(err, err_len, "Make book readable failed: %s", cmd);
+    return -1;
     snprintf(book->local_path, sizeof(book->local_path), "%s", path);
-    book->downloaded = 0; /* non ouvrable par le lecteur PB */
-    snprintf(err, err_len,
-             "EPUB KDRM enregistré (chiffré) :\n%s\n\n"
-             "Non lisible sur PocketBook.\n"
-             "Pour lire : ACSM depuis kobo.com → kobo_shop_data/acsm/ "
-             "→ Menu Importer ACSM.",
-             path);
-    return 1; /* succès partiel : fichier sauvé, message informatif */
+    book->downloaded = 1;
+    return 0;
   }
 
   if (!best_url || !kobo_book_downloadable(book)) {
