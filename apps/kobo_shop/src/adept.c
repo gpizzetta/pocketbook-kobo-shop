@@ -261,6 +261,26 @@ int adept_fulfill_acsm(const char *acsm_path, const char *out_epub, char *err,
   return 0;
 }
 
+int adept_remove_drm(const char *epub_path, char *err, size_t err_len) {
+  char tool[KOBO_SHOP_PATH];
+  if (find_tool("adept_remove", tool, sizeof(tool)) != 0) {
+    snprintf(err, err_len,
+             "adept_remove introuvable dans applications/kobo_shop/");
+    return -1;
+  }
+  if (!epub_path || !epub_path[0] || access(epub_path, R_OK) != 0) {
+    snprintf(err, err_len, "EPUB introuvable: %s", epub_path ? epub_path : "");
+    return -1;
+  }
+  /* argv : le chemin n'est pas interprété par le shell (apostrophes, (), espaces). */
+  char *argv[] = {tool,
+                  (char *)"--adept-directory",
+                  (char *)app_adept_dir(),
+                  (char *)epub_path,
+                  NULL};
+  return run_argv(argv, err, err_len);
+}
+
 int adept_fulfill_book(BookEntry *book, char *err, size_t err_len) {
   if (!book->local_path[0]) {
     snprintf(err, err_len, "pas de fichier local");

@@ -7,6 +7,7 @@
 #include <time.h>
 #include <unistd.h>
 
+#include "adept.h"
 #include "cJSON.h"
 #include "http.h"
 
@@ -950,7 +951,7 @@ int kobo_download_book(AppConfig *cfg, BookEntry *book, char *err, size_t err_le
     return -1;
   }
 
-  /* KDRM : archiver l'EPUB chiffré dans kobo_shop_data/kdrm/ (pas de retrait DRM) */
+  /* KDRM : archiver l'EPUB chiffré dans kobo_shop_data/kdrm/ et le rendre ouvrable par le lecteur. */
   if (book->drm == BOOK_DRM_KDRM && best_url) {
     char fname[KOBO_SHOP_STR];
     sanitize_filename(book->title, fname, sizeof(fname));
@@ -964,19 +965,9 @@ int kobo_download_book(AppConfig *cfg, BookEntry *book, char *err, size_t err_le
       return -1;
     }
     free(best_url);
-    /*
-     * TODO: lancer adept_remove pour rendre le fichier ouvrable par le lecteur.
-     */
-    char cmd[256];
-    snprintf(cmd, sizeof(cmd), "adept_remove %s", path);
-    system(cmd);
-    if (WIFEXITED(status) && WEXITSTATUS(status) == 0) {
-      snprintf(book->local_path, sizeof(book->local_path), "%s", path);
-      book->downloaded = 1;
-      return 0;
+    if (adept_remove_drm(path, err, err_len) != 0) {
+      return -1;
     }
-    snprintf(err, err_len, "Make book readable failed: %s", cmd);
-    return -1;
     snprintf(book->local_path, sizeof(book->local_path), "%s", path);
     book->downloaded = 1;
     return 0;

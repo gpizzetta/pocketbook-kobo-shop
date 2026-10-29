@@ -38,31 +38,44 @@ if [[ ! -f "$DIST/kobo_shop.app" || ! -d "$BUNDLE" ]]; then
   exit 1
 fi
 
+ARM="$ROOT/tools/acsm_fulfill/dist_arm"
+for bin in adept_activate acsmdownloader adept_remove; do
+  if [[ ! -f "$ARM/$bin" ]]; then
+    echo "Binaire manquant: $ARM/$bin" >&2
+    echo "Lance d'abord ./tools/acsm_fulfill/build_arm.sh" >&2
+    exit 1
+  fi
+done
+
 echo "→ $DEST"
 cp -f "$DIST/kobo_shop.app" "$DEST/"
 rm -rf "$DEST/kobo_shop"
 cp -a "$BUNDLE" "$DEST/"
+# Dernière version ARM (écrase ce que build.sh a mis dans le bundle)
+cp -f "$ARM/adept_activate" "$ARM/acsmdownloader" "$ARM/adept_remove" \
+  "$DEST/kobo_shop/"
 
-# Icône menu Applications : view.json au format Era (version + view.groups)
-# Les BMP restent dans applications/kobo_shop/icons/ (pas applications/icons/)
+# Lanceur Era : BMP 8-bit dans applications/icons/ + clé @kobo_shop dans la langue.
+# Le titre de view.json seul laisse le nom « @kobo_shop » (clé de traduction manquante).
 MNT="$(cd "$DEST/.." && pwd)"
 VIEW_DIR="$MNT/system/config/desktop"
 VIEW_JSON="$VIEW_DIR/view.json"
-mkdir -p "$VIEW_DIR"
-if [[ ! -f "$DEST/kobo_shop/icons/kobo_shop.bmp" ]]; then
-  echo "ERREUR: icône absente dans bundle ($DEST/kobo_shop/icons/)" >&2
+mkdir -p "$VIEW_DIR" "$DEST/icons"
+if [[ ! -f "$BUNDLE/icons/kobo_shop.bmp" || ! -f "$BUNDLE/icons/kobo_shop_f.bmp" ]]; then
+  echo "ERREUR: icône absente dans le bundle ($BUNDLE/icons/)" >&2
   exit 1
 fi
+cp -f "$BUNDLE/icons/kobo_shop.bmp" "$BUNDLE/icons/kobo_shop_f.bmp" "$DEST/icons/"
 python3 - "$VIEW_JSON" <<'PY'
 import json, sys, os, shutil
 
 path = sys.argv[1]
-# Chemins relatifs à /mnt/ext1 — format objet {"path":...} accepté par le FW
+# Exemple firmware : icon = { "path": "applications/icons/...." } (relatif à /mnt/ext1)
 entry = {
     "path": "/mnt/ext1/applications/kobo_shop.app",
     "title": "Kobo Shop",
-    "icon": {"path": "applications/kobo_shop/icons/kobo_shop.bmp"},
-    "focused_icon": {"path": "applications/kobo_shop/icons/kobo_shop_f.bmp"},
+    "icon": {"path": "applications/icons/kobo_shop.bmp"},
+    "focused_icon": {"path": "applications/icons/kobo_shop_f.bmp"},
     "visible": "1",
 }
 
@@ -146,21 +159,61 @@ if not placed and groups:
 with open(path, "w", encoding="utf-8") as f:
     json.dump(data, f, indent=2, ensure_ascii=False)
     f.write("\n")
-print("view.json OK — U_kobo_shop + view.groups (icônes: applications/kobo_shop/icons/)")
+print("view.json OK — U_kobo_shop (icônes: applications/icons/)")
+PY
+
+# @kobo_shop → « Kobo Shop » (system/language/<langue>.txt, langue = global.cfg)
+LANG_CODE="fr"
+CFG="$MNT/system/profiles/default/config/global.cfg"
+if [[ -f "$CFG" ]]; then
+  _code="$(sed -n 's/^language=//p' "$CFG" | head -1 | tr -d '[:space:]')"
+  [[ -n "$_code" ]] && LANG_CODE="$_code"
+fi
+python3 - "$MNT/system/language/${LANG_CODE}.txt" "$LANG_CODE" <<'PY'
+import sys
+path, code = sys.argv[1], sys.argv[2]
+headers = {
+    "fr": "French", "en": "English", "de": "German", "es": "Spanish",
+    "it": "Italian", "ru": "Russian", "uk": "Ukrainian", "pl": "Polish",
+    "nl": "Dutch", "pt": "Portuguese", "cs": "Czech", "hu": "Hungarian",
+}
+header = headers.get(code, "French")
+key = "@kobo_shop=Kobo Shop"
+try:
+    lines = open(path, encoding="utf-8").read().splitlines()
+except FileNotFoundError:
+    lines = []
+if not lines:
+    lines = [header]
+out = []
+found = False
+for line in lines:
+    if line.startswith("@kobo_shop="):
+        out.append(key)
+        found = True
+    else:
+        out.append(line)
+if not found:
+    out.append(key)
+with open(path, "w", encoding="utf-8") as f:
+    f.write("\n".join(out) + "\n")
+print(f"langue OK — {path} ({key})")
 PY
 
 # Nettoyage anciens emplacements
 rm -f "$DEST/adept_activate" "$DEST/acsmdownloader" "$DEST/ca-bundle.crt"
 rm -rf "$DEST/adept_libs"
 rm -f "$DEST/hello_kobo.app"
+# Anciens BMP à côté du .app (le lanceur lit applications/icons/)
 rm -f "$DEST/kobo_shop.bmp" "$DEST/kobo_shop_f.bmp"
-# Ancien dossier applications/icons (icônes app uniquement)
-rm -f "$DEST/icons/kobo_shop.bmp" "$DEST/icons/kobo_shop_f.bmp"
 # Ancien data sous applications — ne pas toucher kobo_shop_data à la racine
 rm -rf "$DEST/kobo_shop_data"
 
 cmp "$DIST/kobo_shop.app" "$DEST/kobo_shop.app"
 echo "OK — install : kobo_shop.app + applications/kobo_shop/"
+echo "    ADEPT    : adept_activate, acsmdownloader, adept_remove (dist_arm)"
 echo "    données  : /mnt/ext1/kobo_shop_data/ (géré par l'app)"
 ls -la "$DEST/kobo_shop.app" "$DEST/kobo_shop" | head -25
-ls -la "$DEST/kobo_shop/icons/kobo_shop"*.bmp 2>/dev/null || true
+ls -la "$DEST/kobo_shop/adept_activate" "$DEST/kobo_shop/acsmdownloader" \
+  "$DEST/kobo_shop/adept_remove"
+ls -la "$DEST/icons/kobo_shop"*.bmp 2>/dev/null || true

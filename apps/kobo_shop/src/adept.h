@@ -17,6 +17,10 @@ int adept_activate(AppConfig *cfg, char *err, size_t err_len);
 int adept_fulfill_acsm(const char *acsm_path, const char *out_epub, char *err,
                        size_t err_len);
 
+/* Retire le DRM Adobe du fichier (chemin passé en argv, pas via le shell).
+ * En cas d'échec, err contient le code de sortie et la sortie du binaire. */
+int adept_remove_drm(const char *epub_path, char *err, size_t err_len);
+
 /* If path ends with .acsm, fulfil beside it as .epub and update book. */
 int adept_fulfill_book(BookEntry *book, char *err, size_t err_len);
 
